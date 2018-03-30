@@ -81,3 +81,6 @@ TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
 
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true
+
+# Ignore LG's bootloader wipe commands
+TW_IGNORE_MISC_WIPE_DATA := true
