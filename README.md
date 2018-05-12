@@ -19,4 +19,5 @@ lunch omni_rs988-eng
 make -j5 recoveryimage
 ```
 
-Kernel sources are available at: https://github.com/jcadduono/android_kernel_lge_msm8996/tree/twrp-7.0
+Kernel sources are available at: https://github.com/LineageOS/android_kernel_lge_msm8996
+
