@@ -11,9 +11,18 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
+# Define time zone data path
+ifneq ($(wildcard bionic/libc/zoneinfo),)
+    TZDATAPATH := bionic/libc/zoneinfo
+else ifneq ($(wildcard system/timezone),)
+    TZDATAPATH := system/timezone/output_data/iana
+endif
+
 # Time Zone data for Recovery
+ifdef TZDATAPATH
 PRODUCT_COPY_FILES += \
-    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+    $(TZDATAPATH)/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+endif
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rs988
